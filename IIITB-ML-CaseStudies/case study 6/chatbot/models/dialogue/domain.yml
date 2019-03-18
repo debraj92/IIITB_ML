@@ -1,0 +1,102 @@
+action_factory: null
+action_names:
+- utter_greet
+- utter_goodbye
+- utter_send_goodbye
+- utter_default
+- utter_ask_location
+- utter_ask_cuisine
+- utter_ask_budget
+- utter_ask_send_email
+- utter_ask_email
+- utter_restart
+- action_restaurant_form
+- action_send_email_form
+- action_fallback
+actions:
+- utter_greet
+- utter_goodbye
+- utter_send_goodbye
+- utter_default
+- utter_ask_location
+- utter_ask_cuisine
+- utter_ask_budget
+- utter_ask_send_email
+- utter_ask_email
+- utter_restart
+- actions.ActionSearchRestaurants
+- actions.ActionSendEmail
+- actions.ActionFallback
+config:
+  store_entities_as_slots: true
+entities:
+- location
+- cuisine
+- budget
+- email
+intents:
+- greet
+- affirm
+- deny
+- restaurant_search
+- send_email
+- out_of_scope
+slots:
+  budget:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  cuisine:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  email:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  location:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  requested_slot:
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+templates:
+  utter_ask_budget:
+  - buttons:
+    - payload: less than 300
+      title: 1. less than 300
+    - payload: between 300 to 700
+      title: 2. 300 to 700
+    - payload: more than 700
+      title: 3. more than 700
+    text: What's the average budget for two people?
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: 1. Chinese
+    - payload: Mexican
+      title: 2. Mexican
+    - payload: Italian
+      title: 3. Italian
+    - payload: American
+      title: 4. American
+    - payload: South Indian
+      title: 5. South Indian
+    - payload: North Indian
+      title: 6. North Indian
+    text: what kind of cuisine would you like?
+  utter_ask_email:
+  - text: Can you please tell me your email id?
+  utter_ask_location:
+  - text: In what location?
+  utter_ask_send_email:
+  - text: Should I send you details of all the restaurants on email?
+  utter_default:
+  - text: Didn't get that. Can you please say again?
+  utter_goodbye:
+  - text: Okay. Bon Appetit!
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today
+  utter_restart:
+  - text: New Conversation
+  utter_send_goodbye:
+  - text: Sent. Bon Appetit!

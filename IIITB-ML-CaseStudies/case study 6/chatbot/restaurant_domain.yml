@@ -1,0 +1,86 @@
+slots:
+  location:
+    type: text
+  cuisine:
+    type: text
+  budget:
+    type: text
+  email:
+    type: text
+  requested_slot:
+    type: unfeaturized
+
+entities:
+- location
+- cuisine
+- budget
+- email
+
+intents:
+ - greet
+ - affirm
+ - deny
+ - restaurant_search
+ - send_email
+ - out_of_scope
+
+
+templates:
+  utter_greet:
+    - "hey there! How may i help you"
+    - "Hi, How can I help you!"
+    - "Hey, How is it going. How May I help you Today"
+  utter_goodbye:
+    - "Okay. Bon Appetit!"
+  utter_send_goodbye:
+    - "Sent. Bon Appetit!"  
+  utter_default:
+    - "Didn't get that. Can you please say again?"
+  utter_ask_location:
+    - text: "In what location?"
+  utter_ask_cuisine: 
+    - text: "what kind of cuisine would you like?"
+      buttons:
+      - title: "1. Chinese"
+        payload: "Chinese"
+      - title: "2. Mexican"
+        payload: "Mexican"
+      - title: "3. Italian"
+        payload: "Italian"
+      - title: "4. American"
+        payload: "American"
+      - title: "5. South Indian"
+        payload: "South Indian"
+      - title: "6. North Indian"
+        payload: "North Indian"
+  utter_ask_budget:
+    - text: "What's the average budget for two people?"
+      buttons:
+      - title: "1. less than 300"
+        payload: "less than 300"
+      - title: "2. 300 to 700"
+        payload: "between 300 to 700"
+      - title: "3. more than 700"
+        payload: "more than 700"
+  utter_ask_send_email:
+    - text: "Should I send you details of all the restaurants on email?"
+  utter_ask_email:
+    - text: "Can you please tell me your email id?"
+  utter_restart:
+    - text: "New Conversation"
+    
+
+actions:
+- utter_greet
+- utter_goodbye
+- utter_send_goodbye
+- utter_default
+- utter_ask_location
+- utter_ask_cuisine
+- utter_ask_budget
+- utter_ask_send_email
+- utter_ask_email
+- utter_restart
+- actions.ActionSearchRestaurants
+- actions.ActionSendEmail
+- actions.ActionFallback

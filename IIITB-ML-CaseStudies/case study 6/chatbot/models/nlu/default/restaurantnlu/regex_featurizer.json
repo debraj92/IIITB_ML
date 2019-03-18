@@ -1,0 +1,30 @@
+[
+    {
+        "name": "between",
+        "pattern": "300\\s*-\\s*700"
+    },
+    {
+        "name": "budget_category",
+        "pattern": "(1|2|3)(st|nd|rd)?"
+    },
+    {
+        "name": "email",
+        "pattern": "^[a-zA-Z0-9_.]+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}(\\.[a-zA-Z]{2,3})?$"
+    },
+    {
+        "name": "greet",
+        "pattern": "(hey|hi|hola)([\\s\\w]*)"
+    },
+    {
+        "name": "less",
+        "pattern": "<\\s*300"
+    },
+    {
+        "name": "more",
+        "pattern": ">\\s*700"
+    },
+    {
+        "name": "zipcode",
+        "pattern": "[0-9]{5}"
+    }
+]
