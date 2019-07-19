@@ -87,6 +87,7 @@ class TicTacToe():
         """
         curr_state[curr_action[0]] = curr_action[1]
         self.state = curr_state
+        return self.state
 
 
     def step(self, curr_state, curr_action):
